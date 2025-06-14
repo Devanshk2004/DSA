@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run python with local input and output",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "python \"${file}\" < \"${fileDirname}\\input.txt\" > \"${fileDirname}\\output.txt\""
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
