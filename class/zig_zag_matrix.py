@@ -16,4 +16,4 @@ for _ in range(rows):
     row = list(map(int, input().split()))
     matrix.append(row)
 
-print(zigzag_sum(matrix, rows, cols))
+print(zigzag_sum(matrix, rows, cols)) #zig
