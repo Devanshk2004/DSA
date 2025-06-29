@@ -9,4 +9,3 @@ def to_binary(n):
 
 num = int(input())
 print(to_binary(num))
-#ok
