@@ -10,23 +10,29 @@ class Tree:
     def __init__(self):
         self.root = None
 
-    def insert(self, val):
-        if not self.root:
-            self.root = TreeNode(val)
+    def build_from_level_order(self, values):
+        if not values or values[0] == 'None':
+            self.root = None
             return
-        self._insert(self.root, val)
 
-    def _insert(self, node, val):
-        if val < node.val:
-            if node.left is None:
-                node.left = TreeNode(val)
-            else:
-                self._insert(node.left, val)
-        else:
-            if node.right is None:
-                node.right = TreeNode(val)
-            else:
-                self._insert(node.right, val)
+        iter_vals = iter(values)
+        self.root = TreeNode(int(next(iter_vals)))
+        q = deque([self.root])
+
+        while q:
+            node = q.popleft()
+            try:
+                left_val = next(iter_vals)
+                if left_val != 'None':
+                    node.left = TreeNode(int(left_val))
+                    q.append(node.left)
+
+                right_val = next(iter_vals)
+                if right_val != 'None':
+                    node.right = TreeNode(int(right_val))
+                    q.append(node.right)
+            except StopIteration:
+                break
 
     def preorder(self, node, result):
         if node is None: return
@@ -57,12 +63,12 @@ class Tree:
             if node.right: q.append(node.right)
         return result
 
+# --- Main ---
 # Read input
-nums = list(map(int, input().split()))
+values = input().split()  # for example: 10 20 30 None 40 None 50
 
 tree = Tree()
-for val in nums:
-    tree.insert(val)
+tree.build_from_level_order(values)
 
 # Traversals
 pre = []
