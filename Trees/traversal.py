@@ -40,6 +40,16 @@ class Tree:
         self.preorder(node.left, result)
         self.preorder(node.right, result)
 
+    #To check if trees are identical
+    
+    #def are_trees_identical(tree1, tree2):
+    #    result1 = []
+    #    result2 = []
+    #    tree1.preorder(tree1.root, result1)
+    #   tree2.preorder(tree2.root, result2)
+    #    return result1 == result2
+
+
     def inorder(self, node, result):
         if node is None: return
         self.inorder(node.left, result)
