@@ -65,6 +65,7 @@ class Tree:
         maxi = [0]
         height_and_diameter(self.root, maxi)
         return maxi[0]
+    
 
 # --- Main ---
 # Read input

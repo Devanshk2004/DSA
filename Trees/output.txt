@@ -1,3 +1,1 @@
-Maximum height of the tree: 3
-Diameter of the tree (O(n^2)): 4
-Diameter of the tree (O(n)): 4
+Maximum path sum in the tree: 42
