@@ -70,3 +70,6 @@ tree.build_from_level_order(values)
 zigzag_result = tree.zig_zag(tree.root)
 for level in zigzag_result:
     print(*level)
+
+
+# test here maybe
